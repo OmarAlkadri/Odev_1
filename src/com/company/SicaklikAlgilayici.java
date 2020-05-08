@@ -12,11 +12,10 @@ public class SicaklikAlgilayici
             e = new SicaklikAlgilayici();
         return e;
     }
-    private SicaklikAlgilayici(){
-    }
+    private SicaklikAlgilayici(){}
 
     int sicaklik = 0;
-    protected int getsicaklik(){
+    public int getsicaklik(){
         if (o.getDurum())
             setsicaklik();
         return sicaklik;
