@@ -17,6 +17,7 @@ public class ObserverChannel{
         return o;
     }
     private ObserverChannel(){
+
         support = new PropertyChangeSupport(this);
     }
 

@@ -5,14 +5,13 @@ import java.util.concurrent.CompletableFuture;
 public class Eyleyici implements IEyleyici
 {
     private ObserverChannel o = ObserverChannel.getObserverChannel();
-    private static Eyleyici e;
+    private static Eyleyici e = null;//Singleton
 
     public static Eyleyici setEyleyici(){
         if (e == null)
             e = new Eyleyici();
         return e;
     }
-
     private Eyleyici(){
 
     }

@@ -30,7 +30,7 @@ public class Kulanci extends veriTabanaBaglan implements Ikulanci{
         conn.close();
         return false;
     }
-    private int KanaMenuyuGoster() {
+    public int KanaMenuyuGoster() {
         System.out.println("**********************************************");
         System.out.println("islemler : ");
         System.out.println("sogutucu ac icin '1' basiniz");

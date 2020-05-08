@@ -17,6 +17,7 @@ public class merkeziIslemBirimi {
     private void SogutucuAc(){e.sogutucuAc();}
     private void SogutucuKapat(){e.sogutucukapat();}
     private int SicaklikOku(){return sA.getsicaklik();}
+
     public void KulanciGiris() throws SQLException, InterruptedException {
 
         Kulanci k = new Kulanci();
@@ -26,11 +27,10 @@ public class merkeziIslemBirimi {
         adi = S.nextLine();
         System.out.println("kulanci sifre giriniz:");
         sifre = S.nextLine();
-        int sure;
         if (k.kulanci_giris(adi, sifre)) {
             int secim;
             do {
-                secim = KanaMenuyuGoster();
+                secim = k.KanaMenuyuGoster();
 
                 switch (secim) {
                         case AC:
@@ -45,9 +45,9 @@ public class merkeziIslemBirimi {
                         case CIKIS:
                             break;
                         default:
-                            KanaMenuyuGoster();
+                            k.KanaMenuyuGoster();
                     }
-             }while (secim!=5);
+             }while (secim!=4);
         }else {
             System.out.println("lutfan girdiniz bilgileri kontrol ediniz oyle giris yapiniz.\n\n\n");
             KulanciGiris();
@@ -65,12 +65,11 @@ public class merkeziIslemBirimi {
         if (p.personel_giris(adi, sifre)) {
             int secim;
             do {
-                secim = PanaMenuyuGoster() - 1;
+                secim = p.PanaMenuyuGoster() - 1;
 
                 switch (secim) {
                     case KULANCIEKLE:
                         System.out.println("kulanci adi giriniz:");
-                        adi = S.nextLine();
                         adi = S.nextLine();
                         System.out.println("kulanci email giriniz:");
                         email = S.nextLine();
@@ -90,35 +89,12 @@ public class merkeziIslemBirimi {
                     case CIKIS:
                         break;
                     default:
-                        PanaMenuyuGoster();
+                        p.PanaMenuyuGoster();
                 }
-            }while (secim!=5);
+            }while (secim!=4);
         }else {
             System.out.println("lutfan girdiniz bilgileri kontrol ediniz oyle giris yapiniz.\n\n\n");
             personelGiris();
         }
-    }
-    private int KanaMenuyuGoster() {
-        System.out.println("**********************************************");
-        System.out.println("islemler : ");
-        System.out.println("sogutucu ac icin '1' basiniz");
-        System.out.println("sogutucu kapat icin '2' basiniz");
-        System.out.println("sicaklik goruntule icin '3' basiniz");
-        System.out.println("cikis icin '4' basiniz");
-        System.out.println("secim yapiniz:");
-        System.out.println("**********************************************");
-        return S.nextInt();
-    }
-    private int PanaMenuyuGoster() {
-        System.out.println("**********************************************");
-        System.out.println("islemler : ");
-        System.out.println("kulanci eklemek icin '1' basiniz :");
-        System.out.println("sogutucu ac icin '2' basiniz");
-        System.out.println("sogutucu kapat icin '3' basiniz");
-        System.out.println("sicaklik goruntule icin '4' basiniz");
-        System.out.println("cikis icin '5' basiniz");
-        System.out.println("secim yapiniz:");
-        System.out.println("**********************************************");
-        return S.nextInt();
     }
 }

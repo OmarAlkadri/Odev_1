@@ -27,10 +27,13 @@ public class Personel extends veriTabanaBaglan implements IPersonel{
                 System.out.println("lutfan var olan kulanci ekleme!");
                 System.out.println("kulanci adi giriniz:");
                 adi = S.nextLine();
+                adi = S.nextLine();
             }
             if (rs.getString("kulanci_email").equals(email)) {
-                System.out.println("lutfan var olan kulanci ekleme!");
+                System.out.println("lutfan var olan email ekleme!");
                 System.out.println("kulanci emaili adi giriniz:");
+                email = S.nextLine();
+                email = S.nextLine();
             }
         }
         st.setString(1, adi);
@@ -41,6 +44,7 @@ public class Personel extends veriTabanaBaglan implements IPersonel{
         else {
             while (sifre.length()<5) {
                 System.out.println("Sifre en az 5 karakter olmali");
+                sifre = s.nextLine();
                 sifre = s.nextLine();
             }
             st.setString(3, sifre);
@@ -72,7 +76,7 @@ public class Personel extends veriTabanaBaglan implements IPersonel{
         conn.close();
         return false;
     }
-    private int PanaMenuyuGoster() {
+    public int PanaMenuyuGoster() {
         System.out.println("**********************************************");
         System.out.println("islemler : ");
         System.out.println("kulanci eklemek icin '1' basiniz :");
